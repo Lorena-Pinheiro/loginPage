@@ -45,17 +45,18 @@ $conexao->close();
 </head>
 <body>
 
-    <div class="container">
+    <div class="wrapper">
         <div class="card">
-            <h2>Bem-vindo, <?= $usuario->nome?>!</h2>
-            <p><strong>Email:</strong> <?= $usuario->email?></p>
-            <p><strong>Data de Nascimento:</strong> <?= $usuario->dt_nasc?></p>
+            <h2>Bem-vindo, <?= $usuario->nome ?>!</h2>
+            <p><strong>Email:</strong> <?= $usuario->email ?></p>
+            <p><strong>Data de Nascimento:</strong> <?= $usuario->dt_nasc ?></p>
         </div>
 
         <form action="service.php?action=logout" method="POST">
             <button type="submit" name="button" value="logout">Logout</button>
         </form>
     </div>
+
 
 </body>
 </html>
