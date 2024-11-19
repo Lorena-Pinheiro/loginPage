@@ -1,6 +1,6 @@
 <?php
+
 class Usuario{
-    private $conexao;
     private $tabela = 'usuario';
     public $id_usuario;
     public $nome;
@@ -14,14 +14,10 @@ class Usuario{
     }
 
     public function cadastrar(){
-        $query = "INSERT INTO {$this->tabela} (nome, dt_nasc, email, senha) VALUES ('?', '?', '?', '?');";
-        $resultado = $this->conexao->query($query);
-        return $resultado->fetch_all(MYSQLI_ASSOC);
+        return "INSERT INTO {$this->tabela} (nome, dt_nasc, email, senha) VALUES (?, ?, ?, ?);";
     }
 
     public function mostrar(){
-        $query = "SELECT * FROM usuario WHERE id_usuario = {$this->id_usuario};";
-        $resultado = $this->conexao->query($query);
-        return $resultado->fetch_all(MYSQLI_ASSOC);
+        return "SELECT nome, email, dt_nasc FROM usuario WHERE email = ?;";
     }
 }
